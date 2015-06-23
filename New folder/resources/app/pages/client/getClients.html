@@ -246,7 +246,7 @@
 			}
 			setTimeout(function(){
 				location.reload(); 
-			}, 3000);			
+			}, 1000);			
 		}
 		
      jQuery(document).ready(function($){
@@ -367,7 +367,7 @@
 				stringTable = stringTable + '<li><a href="#" onclick=cancellaCliente("'+tmp.id+'")>Cancella</a></li></ul></div></div></td></tr>';
 				$("#tableClients").append(stringTable);		
 			}
-			str = "<tfoot><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th></tr></tfoot>";
+			str = "<tfoot><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></tfoot>";
 			$("#tableClients").append(str);
 			$("#tableClients").dataTable();
 		  },
