@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Fides | Client</title>
+    <title>Fides | Invoice</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
-            <li class="active treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
                 <span>Clienti</span>
@@ -45,7 +45,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../../pages/client/getClients.html"><i class="fa fa-circle-o"></i> Lista Clienti</a></li>
-                <li class="active"><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
+                <li><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -59,7 +59,7 @@
                 <li><a href="../../pages/product/addProduct.html"><i class="fa fa-circle-o"></i> Inserisci Prodotto</a></li>
               </ul>
             </li>
-			<li class="treeview">
+			<li class="active treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
                 <span>Fatture</span>
@@ -67,7 +67,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../../pages/invoice/getInvoices.html"><i class="fa fa-circle-o"></i> Lista Fatture</a></li>
-                <li><a href="../../pages/invoice/addInvoice.html"><i class="fa fa-circle-o"></i> Inserisci Fattura</a></li>
+                <li class="active"><a href="../../pages/invoice/addInvoice.html"><i class="fa fa-circle-o"></i> Inserisci Fattura</a></li>
               </ul>
             </li>
           </ul>
@@ -80,8 +80,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Clienti
-            <small>Inserimento del cliente</small>
+            Fatture
+            <small>Inserimento delle fatture</small>
           </h1>
         </section>
 
@@ -89,34 +89,90 @@
         <section class="content">
           <div class="row">
             <!-- left column -->
-			<div class="col-md-2">
-			</div>
-            <div class="col-md-8">
-				<div id="messages">
-				</div>
+			
+            <div class="col-md-6">
               <!-- general form elements -->
               <div class="box box-primary col-md-12">
                 <!-- form start -->
                 <form role="form">
                   <div class="box-body">
+					<div class="form-group">
+						<div class="input-group input-group-sm">
+							<input type="text" class="form-control" placeholder="Inserisci p. iva cliente" id="piva">
+							<span class="input-group-btn">
+							  <button class="btn btn-info btn-flat" type="button" id="buttonPIva">Cerca!</button>
+							</span>
+						</div>
+					</div>
+				  
                     <div class="form-group">
-                      <label for="clientName">Nome: </label>
+                      <label for="riferimenti">Riferimenti: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
 						  </div>
-							<input type="text" class="form-control" id="clientName" placeholder="Inserisci nome cliente">
+						<input type="text" class="form-control" id="riferimenti" disabled>
 						</div>
                     </div>
+					
+                    <div class="form-group" >
+                      <label for="indirizzo">Consegna: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-credit-card"></i>
+						  </div>
+						<input type="text" class="form-control" id="indirizzo" disabled>
+					  </div>
+                    </div>
+					
                     <div class="form-group">
-                      <label for="clientSurname">Cognome: </label>
+                      <label for="cPiva">P. iva: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-briefcase"></i>
+						  </div>
+						<input type="text" class="form-control" id="cPiva" disabled>
+					  </div>
+                    </div>
+					
+                    <div class="form-group">
+                      <label for="codicefiscale">Codice fiscale: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-book"></i>
+						  </div>
+                      <input type="text" class="form-control" id="codicefiscale" disabled>
+					  </div>
+                    </div>
+					
+                  </div><!-- /.box-body -->
+                </form>
+              </div><!-- /.box -->
+            </div><!--/.col (right) -->
+			
+			<div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary col-md-12">
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+				  
+                    <div class="form-group">
+                      <label for="numExtFattura">N° Fattura: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
 						  </div>
-						<input type="text" class="form-control" id="clientSurname" placeholder="Inserisci cognome cliente">
+							<input type="text" class="form-control" id="numExtFattura" disabled>
 						</div>
                     </div>
+                    
+                    <div class="form-group">
+					  <div class="input-group">
+							<input type="text" class="form-control" id="numIntFattura" hidden>
+					  </div>
+                    </div>
+					
                     <div class="form-group" >
                       <label for="clientCF">Codice Fiscale: </label>
 					  <div class="input-group">
@@ -126,6 +182,7 @@
 						<input type="text" class="form-control" id="clientCF" placeholder="Inserisci codice fiscale cliente" maxlength="16">
 					  </div>
                     </div>
+					
                     <div class="form-group">
                       <label for="clientPIva">P. iva: </label>
 					  <div class="input-group">
@@ -170,8 +227,7 @@
                 </form>
               </div><!-- /.box -->
             </div><!--/.col (right) -->
-			<div class="col-md-2">
-			</div>
+			
           </div>   <!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
