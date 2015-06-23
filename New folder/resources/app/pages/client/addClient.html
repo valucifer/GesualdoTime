@@ -46,7 +46,6 @@
               <ul class="treeview-menu">
                 <li><a href="../../pages/client/getClients.html"><i class="fa fa-circle-o"></i> Lista Clienti</a></li>
                 <li class="active"><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Cliente</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -58,7 +57,6 @@
               <ul class="treeview-menu">
                 <li><a href="../../pages/product/getProducts.html"><i class="fa fa-circle-o"></i> Lista Prodotti</a></li>
                 <li><a href="../../pages/product/addProduct.html"><i class="fa fa-circle-o"></i> Inserisci Prodotto</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Prodotto</a></li>
               </ul>
             </li>
 			<li class="treeview">
@@ -125,7 +123,7 @@
 						  <div class="input-group-addon">
 							<i class="fa fa-credit-card"></i>
 						  </div>
-						<input type="text" class="form-control" id="clientCF" placeholder="Inserisci codice fiscale cliente">
+						<input type="text" class="form-control" id="clientCF" placeholder="Inserisci codice fiscale cliente" maxlength="16">
 					  </div>
                     </div>
                     <div class="form-group">
@@ -176,7 +174,6 @@
 			</div>
           </div>   <!-- /.row -->
         </section><!-- /.content -->
-        </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
     </div><!-- ./wrapper -->
 
@@ -209,6 +206,7 @@
 				$("#clientMobile").parent().parent().removeClass("has-error");
 				
 				$("#messages").removeClass("callout callout-success");
+				$("#messages").removeClass("callout callout-danger");
 				$("#messages").empty();
 				
 				$("#clientName").val("");
@@ -243,30 +241,6 @@
 			});
 			
 			$("#reset").click(function(){
-			
-				/*alert("resetS");
-				var Client = Parse.Object.extend("cliente");
-				alert("Client");
-				
-				alert("client");
-				var query = new Parse.Query(Client);
-				
-				query.get("Z9PdVt7N6y",{
-					success: function(result) {
-						result.destroy({
-							success: function(object) {
-								alert('Delete Successful');
-							},
-							error: function(object, error) {
-								alert('Delete failed');
-							}
-						});
-					},
-					error: function(error) {
-						alert('Error in delete query');
-					}
-				});
-				alert("dopo find");*/
 				resetFields();
 			});
 			

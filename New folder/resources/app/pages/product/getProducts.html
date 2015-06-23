@@ -47,7 +47,6 @@
               <ul class="treeview-menu">
                 <li><a href="../../pages/client/getClients.html"><i class="fa fa-circle-o"></i> Lista Clienti</a></li>
                 <li><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Cliente</a></li>
               </ul>
             </li>
             <li class="active treeview">
@@ -59,7 +58,6 @@
               <ul class="treeview-menu">
                 <li class="active"><a href="../../pages/product/getProducts.html"><i class="fa fa-circle-o"></i> Lista Prodotti</a></li>
                 <li><a href="../../pages/product/addProduct.html"><i class="fa fa-circle-o"></i> Inserisci Prodotto</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Prodotto</a></li>
               </ul>
             </li>
 			<li class="treeview">
@@ -85,10 +83,10 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Clienti registrati</h3>
+                  <h3 class="box-title">Prodotti registrati</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="tableClients" class="table table-bordered table-striped">
+                  <table id="tableProducts" class="table table-bordered table-striped">
 					<tbody>
 					</tbody>
                   </table>
@@ -96,6 +94,96 @@
               </div><!-- /.box -->
             </div><!-- /.col -->
           </div><!-- /.row -->
+		  
+		  <div class="row" id="spanModifica" hidden>
+            <!-- left column -->
+			<div class="col-md-2">
+			</div>
+            <div class="col-md-8">
+				<div id="messagesModifica">
+				</div>
+              <!-- general form elements -->
+              <div class="box box-warning col-md-12">
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+					<div class="form-group">
+                      <input type="text" hidden value="" id="hidden">
+                    </div>
+                    <div class="form-group">
+                      <label for="productName">Nome: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-male"></i>
+						  </div>
+							<input type="text" class="form-control" id="productName">
+						</div>
+                    </div>
+                    <div class="form-group">
+                      <label for="productPrice">Prezzo: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-male"></i>
+						  </div>
+						<input type="text" class="form-control" id="clientSurname">
+						</div>
+                    </div>
+                    <div class="form-group" >
+                      <label for="clientCF">Codice Fiscale: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-credit-card"></i>
+						  </div>
+						<input type="text" class="form-control" id="clientCF" maxlength="16">
+					  </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="clientPIva">P. iva: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-briefcase"></i>
+						  </div>
+						<input type="text" class="form-control" id="clientPIva" maxlength="16">
+					  </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="clientAddress">Indirizzo: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-book"></i>
+						  </div>
+                      <input type="text" class="form-control" id="clientAddress">
+					  </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="clientPhone">Telefono: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-phone"></i>
+						  </div>
+						  <input type="text" class="form-control" id="clientPhone">
+					  </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="clientMobile">Cellulare: </label>
+						<div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-mobile"></i>
+						  </div>
+							<input type="text" class="form-control" id="clientMobile">
+						</div>
+                    </div>
+                  </div><!-- /.box-body -->
+					  <div class="box-footer" align="center">
+							<button type="button" id="update" class="btn btn-warning">Modifica</button>&nbsp;
+					  </div>
+                </form>
+              </div><!-- /.box -->
+            </div><!--/.col (right) -->
+			<div class="col-md-2">
+			</div>
+          </div> 
+		  
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
     </div><!-- ./wrapper -->
@@ -118,9 +206,148 @@
     <!-- page script -->
     <script type="text/javascript">
 		
-     jQuery(document).ready(function($){
-        
 		Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
+		
+		function modificaCliente(id){
+			$("#spanModifica").removeAttr("hidden");
+			var yourClass = Parse.Object.extend("cliente");
+			var query = new Parse.Query(yourClass);
+			query.get(id, {
+			  success: function(yourObj) {
+				$("#hidden").val(id);
+				$("#clientName").val(yourObj.get("nome"));
+				$("#clientSurname").val(yourObj.get("cognome"));
+				$("#clientCF").val(yourObj.get("codice_fiscale"));
+				$("#clientPIva").val(yourObj.get("piva"));
+				$("#clientAddress").val(yourObj.get("indirizzo"));
+				$("#clientPhone").val(yourObj.get("telefono"));
+				$("#clientMobile").val(yourObj.get("cellulare"));
+			  },
+			  error: function(object, error) {
+				alert("Ci sono alcuni problemi col server");
+			  }
+			});
+		}
+		
+		function cancellaCliente(id){
+			if (confirm("Sei sicuro di voler cancellare questo cliente?")) {
+				var yourClass = Parse.Object.extend("cliente");
+				var query = new Parse.Query(yourClass);
+				query.get(id, {
+				  success: function(yourObj) {
+					alert("Ok, il cliente è stato cancellato.");
+					yourObj.destroy({});
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			} else {
+			}
+			setTimeout(function(){
+				location.reload(); 
+			}, 3000);			
+		}
+		
+     jQuery(document).ready(function($){
+		
+		$("#clientCF").keyup(function(){
+			$("#clientCF").parent().parent().removeClass("has-error");
+		});
+		$("#clientName").keyup(function(){
+			$("#clientName").parent().parent().removeClass("has-error");
+		});
+		$("#clientSurname").keyup(function(){
+			$("#clientSurname").parent().parent().removeClass("has-error");
+		});
+		$("#clientAddress").keyup(function(){
+			$("#clientAddress").parent().parent().removeClass("has-error");
+		});
+		$("#clientPIva").keyup(function(){
+			$("#clientPIva").parent().parent().removeClass("has-error");
+		});
+		$("#clientPhone").keyup(function(){
+			$("#clientPhone").parent().parent().removeClass("has-error");
+		});
+		$("#clientMobile").keyup(function(){
+			$("#clientMobile").parent().parent().removeClass("has-error");
+		});
+		
+		$("#update").click(function(){
+			var flag = true;
+			if($("#clientCF").val() !== "" ){
+				var expr = /^[A-Za-z]{6}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{3}[A -Za-z]{1}$/;
+				if(!expr.test($("#clientCF").val())){
+					$("#clientCF").parent().parent().attr("class","form-group has-error");
+					flag = false;
+				}
+			}
+			if($("#clientName").val() === "" ){
+				$("#clientName").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}
+			if($("#clientSurname").val() === "" ){
+				$("#clientSurname").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}
+			if($("#clientPIva").val() === "" ){
+				$("#clientPIva").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}
+			if($("#clientPhone").val() === "" ){
+				$("#clientPhone").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}else{
+				var expr = /^([0-9]*\-?\ ?\/?[0-9]*)$/;
+				if(!expr.test($("#clientPhone").val())){
+					$("#clientPhone").parent().parent().attr("class","form-group has-error");
+					flag = false;
+				}
+			}
+			if($("#clientMobile").val() === "" ){
+				$("#clientMobile").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}else{
+				var expr = /^([0-9]*\-?\ ?\/?[0-9]*)$/;
+				if(!expr.test($("#clientMobile").val())){
+					$("#clientMobile").parent().parent().attr("class","form-group has-error");
+					flag = false;
+				}
+			}
+			if($("#clientAddress").val() === "" ){
+				$("#clientAddress").parent().parent().attr("class","form-group has-error");
+				flag = false;
+			}
+			
+			if(flag){
+				var Client = Parse.Object.extend("cliente");
+				var client = new Client();
+				
+				client.id = $("#hidden").val();
+				client.set("nome", $("#clientName").val());
+				client.set("cognome", $("#clientSurname").val());
+				client.set("codice_fiscale", $("#clientCF").val());
+				client.set("piva", $("#clientPIva").val());
+				client.set("indirizzo", $("#clientAddress").val());
+				client.set("telefono", $("#clientPhone").val());
+				client.set("cellulare", $("#clientMobile").val());
+
+				client.save(null, {
+				  success: function(client) {
+					$("#messagesModifica").attr("class","callout callout-success");
+					$("#messagesModifica").html("<h4>Successo!</h4><p>I dati sono stati inseriti correttamente sul server.</p>");
+				  },
+				  error: function(client) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+				
+				setTimeout(function(){
+					location.reload(); 
+				}, 3000);	
+			}
+		});
+		
 		
 		var Client = Parse.Object.extend("cliente");
 		var query = new Parse.Query(Client);
@@ -128,11 +355,16 @@
 		  success: function(obj) {
 			$("#tableClients tbody").empty();
 			// The object was retrieved successfully.
-			var str = "<thead><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th></tr></thead>";
+			var str = "<thead><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></thead>";
 			$("#tableClients").append(str);
 			for (var i=0;i<obj.length;i++){	
 				var tmp = obj[i];
-				var stringTable = "<tr><td>"+tmp.get("nome")+"</td><td>"+tmp.get("cognome")+"</td><td>"+tmp.get("codice_fiscale")+"</td><td>"+tmp.get("piva")+"</td><td>"+tmp.get("indirizzo")+"</td><td>"+tmp.get("telefono")+"</td><td>"+tmp.get("cellulare")+"</td></tr>";
+				var stringTable = "<tr><td>"+tmp.get("nome")+"</td><td>"+tmp.get("cognome")+"</td><td>"+tmp.get("codice_fiscale")+"</td><td>"+tmp.get("piva")+"</td><td>"+tmp.get("indirizzo")+"</td><td>"+tmp.get("telefono")+"</td><td>"+tmp.get("cellulare")+"</td>";
+				stringTable = stringTable + '<td align="center"><div class="margin"><div class="btn-group"><button type="button" class="btn btn-warning">Azione</button>';
+                stringTable = stringTable + '<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">';
+                stringTable = stringTable + '<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>';
+                stringTable = stringTable + '<ul class="dropdown-menu" role="menu"><li><a href="#" onclick=modificaCliente("'+tmp.id+'")>Modifica</a></li>';
+				stringTable = stringTable + '<li><a href="#" onclick=cancellaCliente("'+tmp.id+'")>Cancella</a></li></ul></div></div></td></tr>';
 				$("#tableClients").append(stringTable);		
 			}
 			str = "<tfoot><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th></tr></tfoot>";
@@ -145,6 +377,7 @@
 			alert(error);
 		  }
 		});
+		
 		
       });
     </script>

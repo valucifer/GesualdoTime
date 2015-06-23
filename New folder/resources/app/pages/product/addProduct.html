@@ -45,8 +45,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../../pages/client/getClients.html"><i class="fa fa-circle-o"></i> Lista Clienti</a></li>
-                <li class="active"><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Cliente</a></li>
+                <li><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
               </ul>
             </li>
             <li class="active treeview">
@@ -58,7 +57,6 @@
               <ul class="treeview-menu">
                 <li><a href="../../pages/product/getProducts.html"><i class="fa fa-circle-o"></i> Lista Prodotti</a></li>
                 <li class="active"><a href="../../pages/product/addProduct.html"><i class="fa fa-circle-o"></i> Inserisci Prodotto</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Modifica Prodotto</a></li>
               </ul>
             </li>
 			<li class="treeview">
@@ -82,8 +80,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Clienti
-            <small>Inserimento del cliente</small>
+            Prodotti
+            <small>Inserimento del Prodotto</small>
           </h1>
         </section>
 
@@ -102,67 +100,31 @@
                 <form role="form">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="clientName">Nome: </label>
+                      <label for="productName">Nome: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
 						  </div>
-							<input type="text" class="form-control" id="clientName" placeholder="Inserisci nome cliente">
+							<input type="text" class="form-control" id="productName" placeholder="Inserisci nome prodotto">
 						</div>
                     </div>
                     <div class="form-group">
-                      <label for="clientSurname">Cognome: </label>
+                      <label for="productPrice">Prezzo: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
 						  </div>
-						<input type="text" class="form-control" id="clientSurname" placeholder="Inserisci cognome cliente">
+						<input type="text" class="form-control" id="productPrice" placeholder="Inserisci prezzo cliente">
 						</div>
                     </div>
                     <div class="form-group" >
-                      <label for="clientCF">Codice Fiscale: </label>
+                      <label for="productQuantity">Quantit&agrave;: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-credit-card"></i>
 						  </div>
-						<input type="text" class="form-control" id="clientCF" placeholder="Inserisci codice fiscale cliente">
+						<input type="text" class="form-control" id="productQuantity" placeholder="Inserisci quantit&agrave; prodotto">
 					  </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="clientPIva">P. iva: </label>
-					  <div class="input-group">
-						  <div class="input-group-addon">
-							<i class="fa fa-briefcase"></i>
-						  </div>
-						<input type="text" class="form-control" id="clientPIva" placeholder="Inserisci p. iva cliente" maxlength="16">
-					  </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="clientAddress">Indirizzo: </label>
-					  <div class="input-group">
-						  <div class="input-group-addon">
-							<i class="fa fa-book"></i>
-						  </div>
-                      <input type="text" class="form-control" id="clientAddress" placeholder="Inserisci indirizzo cliente">
-					  </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="clientPhone">Telefono: </label>
-					  <div class="input-group">
-						  <div class="input-group-addon">
-							<i class="fa fa-phone"></i>
-						  </div>
-						  <input type="text" class="form-control" id="clientPhone" placeholder="Inserisci telefono cliente">
-					  </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="clientMobile">Cellulare: </label>
-						<div class="input-group">
-						  <div class="input-group-addon">
-							<i class="fa fa-mobile"></i>
-						  </div>
-							<input type="text" class="form-control" id="clientMobile" placeholder="Inserisci cellulare cliente">
-						</div>
                     </div>
                   </div><!-- /.box-body -->
 					  <div class="box-footer" align="right">
@@ -175,7 +137,6 @@
 			<div class="col-md-2">
 			</div>
           </div>   <!-- /.row -->
-        </section><!-- /.content -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
     </div><!-- ./wrapper -->
@@ -200,134 +161,57 @@
 			Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
 			
 			function resetFields(){
-				$("#clientName").parent().parent().removeClass("has-error");
-				$("#clientSurname").parent().parent().removeClass("has-error");
-				$("#clientCF").parent().parent().removeClass("has-error");
-				$("#clientAddress").parent().parent().removeClass("has-error");
-				$("#clientPIva").parent().parent().removeClass("has-error");
-				$("#clientPhone").parent().parent().removeClass("has-error");
-				$("#clientMobile").parent().parent().removeClass("has-error");
+				$("#productName").parent().parent().removeClass("has-error");
+				$("#productPrice").parent().parent().removeClass("has-error");
+				$("#productQuantity").parent().parent().removeClass("has-error");
 				
 				$("#messages").removeClass("callout callout-success");
+				$("#messages").removeClass("callout callout-danger");
 				$("#messages").empty();
 				
-				$("#clientName").val("");
-				$("#clientSurname").val("");
-				$("#clientCF").val("");
-				$("#clientAddress").val("");
-				$("#clientPIva").val("");
-				$("#clientPhone").val("");
-				$("#clientMobile").val("");
+				$("#productName").val("");
+				$("#productPrice").val("");
+				$("#productQuantity").val("");
 			}
 			
-			$("#clientCF").keyup(function(){
-				$("#clientCF").parent().parent().removeClass("has-error");
+			$("#productName").keyup(function(){
+				$("#productName").parent().parent().removeClass("has-error");
 			});
-			$("#clientName").keyup(function(){
-				$("#clientName").parent().parent().removeClass("has-error");
+			$("#productPrice").keyup(function(){
+				$("#productPrice").parent().parent().removeClass("has-error");
 			});
-			$("#clientSurname").keyup(function(){
-				$("#clientSurname").parent().parent().removeClass("has-error");
-			});
-			$("#clientAddress").keyup(function(){
-				$("#clientAddress").parent().parent().removeClass("has-error");
-			});
-			$("#clientPIva").keyup(function(){
-				$("#clientPIva").parent().parent().removeClass("has-error");
-			});
-			$("#clientPhone").keyup(function(){
-				$("#clientPhone").parent().parent().removeClass("has-error");
-			});
-			$("#clientMobile").keyup(function(){
-				$("#clientMobile").parent().parent().removeClass("has-error");
+			$("#productQuantity").keyup(function(){
+				$("#productQuantity").parent().parent().removeClass("has-error");
 			});
 			
 			$("#reset").click(function(){
-			
-				/*alert("resetS");
-				var Client = Parse.Object.extend("cliente");
-				alert("Client");
-				
-				alert("client");
-				var query = new Parse.Query(Client);
-				
-				query.get("Z9PdVt7N6y",{
-					success: function(result) {
-						result.destroy({
-							success: function(object) {
-								alert('Delete Successful');
-							},
-							error: function(object, error) {
-								alert('Delete failed');
-							}
-						});
-					},
-					error: function(error) {
-						alert('Error in delete query');
-					}
-				});
-				alert("dopo find");*/
 				resetFields();
 			});
 			
 			$("#send").click(function(){
 				var flag = true;
-				if($("#clientCF").val() !== "" ){
-					var expr = /^[A-Za-z]{6}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{3}[A -Za-z]{1}$/;
-					if(!expr.test($("#clientCF").val())){
-						$("#clientCF").parent().parent().attr("class","form-group has-error");
-						flag = false;
-					}
-				}
-				if($("#clientName").val() === "" ){
-					$("#clientName").parent().parent().attr("class","form-group has-error");
+				
+				if($("#productName").val() === "" ){
+					$("#productName").parent().parent().attr("class","form-group has-error");
 					flag = false;
 				}
-				if($("#clientSurname").val() === "" ){
-					$("#clientSurname").parent().parent().attr("class","form-group has-error");
+				if($("#productPrice").val() === "" || isNaN($("#productPrice").val())){
+					$("#productPrice").parent().parent().attr("class","form-group has-error");
 					flag = false;
 				}
-				if($("#clientPIva").val() === "" ){
-					$("#clientPIva").parent().parent().attr("class","form-group has-error");
-					flag = false;
-				}
-				if($("#clientPhone").val() === "" ){
-					$("#clientPhone").parent().parent().attr("class","form-group has-error");
-					flag = false;
-				}else{
-					var expr = /^([0-9]*\-?\ ?\/?[0-9]*)$/;
-					if(!expr.test($("#clientPhone").val())){
-						$("#clientPhone").parent().parent().attr("class","form-group has-error");
-						flag = false;
-					}
-				}
-				if($("#clientMobile").val() === "" ){
-					$("#clientMobile").parent().parent().attr("class","form-group has-error");
-					flag = false;
-				}else{
-					var expr = /^([0-9]*\-?\ ?\/?[0-9]*)$/;
-					if(!expr.test($("#clientMobile").val())){
-						$("#clientMobile").parent().parent().attr("class","form-group has-error");
-						flag = false;
-					}
-				}
-				if($("#clientAddress").val() === "" ){
-					$("#clientAddress").parent().parent().attr("class","form-group has-error");
+				if($("#productQuantity").val() === "" || isNaN($("#productQuantity").val())){
+					$("#productQuantity").parent().parent().attr("class","form-group has-error");
 					flag = false;
 				}
 				
 				if(flag){
-					var Client = Parse.Object.extend("cliente");
-					var client = new Client();
+					var Product = Parse.Object.extend("prodotto");
+					var product = new Product();
 
-					client.save({
-					  nome: $("#clientName").val(),
-					  cognome:  $("#clientSurname").val(),
-					  codice_fiscale:  $("#clientCF").val(),
-					  piva:  $("#clientPIva").val(),
-					  indirizzo:  $("#clientAddress").val(),
-					  telefono:  $("#clientPhone").val(),
-					  cellulare:  $("#clientMobile").val()
+					product.save({
+					  nome: $("#productName").val(),
+					  prezzo:  parseFloat($("#productPrice").val()),
+					  quantita:  parseInt($("#productQuantity").val())
 					}, {
 					  success: function(client) {
 						$("#messages").attr("class","callout callout-success");
