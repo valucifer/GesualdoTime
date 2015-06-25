@@ -17,6 +17,9 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="../../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+	
+	<!-- See closing body for JS -->
+	<script src="http://use.edgefonts.net/source-code-pro.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -203,14 +206,438 @@
                       <th>Prezzo</th>
                       <th>Sc.</th>
                       <th>Importo</th>
+                      <th></th>
                     </tr>
                     <tr>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
-                      <td><input type="text" class="form-control" id="numExtFattura" disabled></td>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto1">
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto1" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto1">
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto1" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto1">
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto1" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi1">Aggiungi</button>
+					  </td>
+                    </tr>
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto2" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto2" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto2" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto2" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto2" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto2" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi2" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto3" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto3" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto3" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto3" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto3" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto3" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi3" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto4" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto4" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto4" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto4" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto4" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto4" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi4" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto5" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto5" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto5" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto5" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto5" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto5" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi5" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto6" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto6" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto6" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto6" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto6" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto6" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi6" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto7" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto7" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto7" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto7" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto7" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto7" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi7" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto8" disabled>
+							</select>
+						</div>
+					</td>
+                      <td><input type="text" class="form-control" id="articoloProdotto8" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto8" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto8" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto8" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto8" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi8" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto9" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto9" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto9" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto9" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto9" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto9" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi9" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto10" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto10" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto10" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto10" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto10" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto10" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi10" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto11" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto11" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto11" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto11" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto11" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto11" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi11" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto12" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto12" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto12" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto12" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto12" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto12" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi12" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto13" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto13" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto13" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto13" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto13" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto13" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi13" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto14" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto14" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto14" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto14" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto14" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto14" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi14" disabled>Aggiungi</button>
+					  </td>
+                    </tr>
+					
+					<tr>
+                      <td>
+						<div class="form-group">
+							<select class="form-control" id="quantitaProdotto15" disabled>
+							</select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="articoloProdotto15" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="descrizioneProdotto15" disabled>
+						  </select>
+						</div>
+					  </td>
+                      <td><input type="text" class="form-control" id="prezzoProdotto15" disabled></td>
+                      <td>
+						<div class="form-group">
+						  <select class="form-control" id="scontoProdotto15" disabled>
+						  </select>
+						</div>
+					  </td>	
+                      <td>
+						<input type="text" class="form-control" id="importoProdotto15" disabled>
+					  </td>
+					  <td>
+						<button class="btn btn-block btn-default" id="aggiungi15" disabled>Aggiungi</button>
+					  </td>
                     </tr>
                   </tbody>
 				 </table>
@@ -219,12 +646,73 @@
             </div>
           </div>
 		  
-        </section><!-- /.content -->
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div id="messages">
+				</div>
+              <!-- general form elements -->
+              <div class="box box-primary col-md-12">
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+				  
+                    <div class="form-group">
+                      <label for="imponibile">Imponibile: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-male"></i>
+						  </div>
+							<input type="text" class="form-control" id="imponibile" value="0.00" disabled>
+						</div>
+                    </div>
+                    
+                    <div class="form-group">
+						<label for="imponibile">Iva: </label>
+						<div class="input-group">
+							<select class="form-control" id="iva">
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+                      <label>Pagamenti</label>
+                      <textarea class="form-control" rows="3" id="pagamenti" placeholder="Inserisci ..."></textarea>
+                    </div>
+					
+					<div class="form-group" >
+                      <label for="totale">Totale: </label>
+					  <div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-credit-card"></i>
+						  </div>
+						<input type="text" class="form-control" id="totale" value="0.00" disabled>
+					  </div>
+                    </div>
+					
+                  </div><!-- /.box-body -->
+				  <div class="box-footer" align="center">
+						<button type="button" id="inseriscifattura" class="btn btn-primary">Inserisci</button>&nbsp;
+						<button type="button" id="reset" class="btn btn-danger">Reset</button>&nbsp;
+				  </div>
+                </form>
+              </div><!-- /.box -->
+            </div><!--/.col (right) -->
+			<div class="col-md-2"></div>
+		</div>   <!-- /.row -->
+		  	
+		</section><!-- /.content -->
       </div><!-- /.content-wrapper -->
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.3 -->
-    <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>-->
+	<script>
+		window.$ = window.jQuery = require('../../plugins/jQuery/jQuery-2.1.3.min.js');
+		alert($);
+	</script>
+	<!-- Scripts down here -->
+	<script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- DATA TABES SCRIPT -->
@@ -236,12 +724,1475 @@
     <script src='../../plugins/fastclick/fastclick.min.js'></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/app.min.js" type="text/javascript"></script>
+	<!-- jsPDF -->
+	<script src="../../dist/jspdf.min.js"></script>
     <!-- Parse -->
     <script src="../../dist/js/parse-1.4.2.min.js" type="text/javascript"></script>
-    
+	<!-- Code editor -->
+	<script src="https://cdn.jsdelivr.net/ace/1.1.01/noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+   	
 	<script>
+			
+			function resetFields(){
+				/*$("#piva").val("");
+				$("#riferimenti").val("");
+				$("#indirizzo").val("");
+				$("#cPiva").val("");
+				$("#codicefiscale").val("");
+				
+				$("#pagamenti").val("");
+				$("#imponibile").val("0.00");
+				$("#totale").val("0.00");
+				$("#iva").val("0");
+				
+				$("#messages").removeClass("callout callout-success");
+				$("#messages").removeClass("callout callout-danger");
+				$("#messages").empty();
+				
+				for(var i = 1; i < 16; i++){
+					$("#quantitaProdotto"+i).empty();
+					$("#articoloProdotto"+i).val("");
+					$("#descrizioneProdotto"+i).val("0");
+					$("#prezzoProdotto"+i).val("");
+					$("#scontoProdotto"+i).val("0");
+					$("#importoProdotto"+i).val("");
+					
+					if(i == 1){
+						$("#quantitaProdotto"+i).removeAttr("disabled");
+						$("#descrizioneProdotto"+i).removeAttr("disabled");
+						$("#scontoProdotto"+i).removeAttr("disabled");
+						$("#aggiungi"+i).removeAttr("disabled");
+					}else{
+						$("#quantitaProdotto"+i).attr("disabled","true");
+						$("#descrizioneProdotto"+i).attr("disabled","true");
+						$("#scontoProdotto"+i).attr("disabled","true");
+						$("#aggiungi"+i).attr("disabled","true");
+					}
+				}*/
+				
+				var doc = new jsPDF();
+				doc.text(8, 20, 'Hello world.');
+				doc.save('Test.pdf');
+			}
+			
 		jQuery(document).ready(function($){
 			Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
+			
+			$("#reset").click(function(e){
+				resetFields();
+			});
+			
+			$("#inseriscifattura").click(function(e){
+				var flag = true;
+				
+				if($("#riferimenti").val() === ""){
+					$("#piva").parent().parent().attr("class","form-group has-error");
+					flag = false;
+				}
+				if($("#importoProdotto1").val() === ""){
+					alert("Almeno un prodotto deve essere inserito.");
+					flag = false;
+				}
+				
+				if(flag){
+					var clientePiva = $("#piva").val();
+					var clienteItestazione = $("#riferimenti").val();
+					var clienteIndirizzo = $("#indirizzo").val();
+					var codiceFiscale = $("#codicefiscale").val();
+					var imponibile = parseFloat($("#imponibile").val());
+					var iva = parseInt($("#iva").val());
+					var totale = parseFloat($("#totale").val());
+					var data = $("#data").val();
+					var intNumb = parseInt($("#numIntFattura").val());
+					var extNumb = parseInt($("#numExtFattura").val());
+					
+					var InvoiceHead = Parse.Object.extend("fatturaTestata");
+					var invoiceHead = new InvoiceHead();
+					invoiceHead.save({
+							clientePIva: clientePiva,
+							clienteItestazione: clienteItestazione,
+							clienteIndirizzo: clienteIndirizzo,
+							imponibile: imponibile,
+							iva: iva,
+							totale: totale,
+							data: data,
+							intNumb: intNumb+1,
+							extNumb: extNumb
+						}, {
+						  success: function(invoiceHead) {
+						},
+						error: function(client, error) {
+						}
+					});
+					
+					var Protocols = Parse.Object.extend("protocollo");
+					var query = new Parse.Query(Protocols);
+					query.equalTo("data", ""+d.getFullYear());
+					query.find({
+						success: function(results) {
+							if(results.length != 0){
+								var protocols = new Protocols();
+								var numero = parseInt(results[0].get("numero")) + 1;
+								
+								protocols.id = results[0].id;
+								protocols.set("data", ""+d.getFullYear());
+								protocols.set("numero", numero);
+
+								protocols.save(null, {
+								  success: function(protocols) {
+								  },
+								  error: function(protocols) {
+								  }
+								});
+							}
+						},
+						error: function(error) {
+							console.error("Error: " + error.code + " " + error.message);
+						}
+					});
+					
+					var count = 0;
+					for (var i = 1; i < 16; i++){
+						if($("#importoProdotto"+i).val() === "")
+							break;
+						else
+							count++;
+					}
+					
+					for(var i = 1; i <= count; i++){
+						var quantita = parseInt($("#quantitaProdotto"+i).val());
+						var prezzo = parseFloat(Math.round($("#prezzoProdotto"+i).val() *100)/100);
+						var descrizione = $("#descrizioneProdotto"+i).val();
+						
+						var InvoiceDescription = Parse.Object.extend("fatturaDescrizione");
+						var invoiceDescription = new InvoiceDescription();
+						invoiceDescription.save({
+								quantita: quantita,
+								prezzo: prezzo,
+								descrizione: descrizione,
+								fattExtNumb: extNumb
+							}, {
+							  success: function(invoiceHead) {
+								$("#messages").attr("class","callout callout-success");
+								$("#messages").html("<h4>Successo!</h4><p>I dati sono stati inseriti correttamente sul server.</p>")
+							},
+							error: function(client, error) {
+								$("#messages").attr("class","callout callout-danger");
+								$("#messages").html("<h4>Errore!</h4><p>Sembra ci sia stato un errore nell\'elaborazione dei dati da parte del server. Potresti riprovare, per favore?</p>")
+							}
+						});
+					}
+					
+					setTimeout(function(){
+						location.reload(); 
+					}, 2000);					
+				}			
+			
+			});
+			
+			var d = new Date();
+			var flagForYes = 100;
+			
+			var Prot1 = Parse.Object.extend("protocollo");
+			var query = new Parse.Query(Prot1);
+			query.equalTo("data", ""+d.getFullYear());
+			query.find({
+				success: function(results) {
+					if(results.length == 0){
+						var protocols = new Prot1();
+						protocols.save({
+							  data: ""+d.getFullYear(),
+							  numero:  0
+							}, {
+							  success: function(protocols) {
+							  },
+							  error: function(protocols, error) {
+							  }
+						});
+						
+						$("#numIntFattura").val(0);
+					}else{
+						$("#numIntFattura").val(results[0].get("numero"));
+					}
+				},
+				error: function(error) {
+					console.error("Error: " + error.code + " " + error.message);
+				}
+			});
+			
+			var Invoice = Parse.Object.extend("fatturaTestata");
+			var query = new Parse.Query(Invoice);
+			query.find({
+			  success: function(obj) {
+				$("#numExtFattura").val(obj.length+1);
+			  },
+			  error: function(object, error) {
+				alert(error);
+			  }
+			});
+			
+			$("#iva").change(function(e){
+				if($("#imponibile").val() !== ""){
+					var value = parseInt($("#iva").val());
+					var imponibile = parseFloat($("#imponibile").val());
+					if(value === "0"){
+						$("#totale").val(imponibile);
+					}else{
+						var iva = (imponibile*value)/100;
+						$("#totale").val(Math.round((imponibile + iva)*100)/100);
+					}
+				}
+			});
+			
+			$("#aggiungi1").click(function(e){
+				if($("#importoProdotto1").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto1").attr("disabled","true");
+						$("#descrizioneProdotto1").attr("disabled","true");
+						$("#scontoProdotto1").attr("disabled","true");
+						$("#aggiungi1").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto1").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto2").removeAttr("disabled");
+						$("#descrizioneProdotto2").removeAttr("disabled");
+						$("#scontoProdotto2").removeAttr("disabled");
+						$("#aggiungi2").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi2").click(function(e){
+				if($("#importoProdotto2").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto2").attr("disabled","true");
+						$("#descrizioneProdotto2").attr("disabled","true");
+						$("#scontoProdotto2").attr("disabled","true");
+						$("#aggiungi2").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto2").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto3").removeAttr("disabled");
+						$("#descrizioneProdotto3").removeAttr("disabled");
+						$("#scontoProdotto3").removeAttr("disabled");
+						$("#aggiungi3").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi3").click(function(e){
+				if($("#importoProdotto3").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto3").attr("disabled","true");
+						$("#descrizioneProdotto3").attr("disabled","true");
+						$("#scontoProdotto3").attr("disabled","true");
+						$("#aggiungi3").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto3").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto4").removeAttr("disabled");
+						$("#descrizioneProdotto4").removeAttr("disabled");
+						$("#scontoProdotto4").removeAttr("disabled");
+						$("#aggiungi4").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi4").click(function(e){
+				if($("#importoProdotto4").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto4").attr("disabled","true");
+						$("#descrizioneProdotto4").attr("disabled","true");
+						$("#scontoProdotto4").attr("disabled","true");
+						$("#aggiungi4").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto4").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto5").removeAttr("disabled");
+						$("#descrizioneProdotto5").removeAttr("disabled");
+						$("#scontoProdotto5").removeAttr("disabled");
+						$("#aggiungi5").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi5").click(function(e){
+				if($("#importoProdotto5").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto5").attr("disabled","true");
+						$("#descrizioneProdotto5").attr("disabled","true");
+						$("#scontoProdotto5").attr("disabled","true");
+						$("#aggiungi5").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto5").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto6").removeAttr("disabled");
+						$("#descrizioneProdotto6").removeAttr("disabled");
+						$("#scontoProdotto6").removeAttr("disabled");
+						$("#aggiungi6").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi6").click(function(e){
+				if($("#importoProdotto6").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto6").attr("disabled","true");
+						$("#descrizioneProdotto6").attr("disabled","true");
+						$("#scontoProdotto6").attr("disabled","true");
+						$("#aggiungi6").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto6").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto7").removeAttr("disabled");
+						$("#descrizioneProdotto7").removeAttr("disabled");
+						$("#scontoProdotto7").removeAttr("disabled");
+						$("#aggiungi7").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi7").click(function(e){
+				if($("#importoProdotto7").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto7").attr("disabled","true");
+						$("#descrizioneProdotto7").attr("disabled","true");
+						$("#scontoProdotto7").attr("disabled","true");
+						$("#aggiungi7").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto7").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto8").removeAttr("disabled");
+						$("#descrizioneProdotto8").removeAttr("disabled");
+						$("#scontoProdotto8").removeAttr("disabled");
+						$("#aggiungi8").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi8").click(function(e){
+				if($("#importoProdotto8").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto8").attr("disabled","true");
+						$("#descrizioneProdotto8").attr("disabled","true");
+						$("#scontoProdotto8").attr("disabled","true");
+						$("#aggiungi8").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto8").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto9").removeAttr("disabled");
+						$("#descrizioneProdotto9").removeAttr("disabled");
+						$("#scontoProdotto9").removeAttr("disabled");
+						$("#aggiungi9").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi9").click(function(e){
+				if($("#importoProdotto9").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto9").attr("disabled","true");
+						$("#descrizioneProdotto9").attr("disabled","true");
+						$("#scontoProdotto9").attr("disabled","true");
+						$("#aggiungi9").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto9").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto10").removeAttr("disabled");
+						$("#descrizioneProdotto10").removeAttr("disabled");
+						$("#scontoProdotto10").removeAttr("disabled");
+						$("#aggiungi10").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi10").click(function(e){
+				if($("#importoProdotto10").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto10").attr("disabled","true");
+						$("#descrizioneProdotto10").attr("disabled","true");
+						$("#scontoProdotto10").attr("disabled","true");
+						$("#aggiungi10").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto10").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto11").removeAttr("disabled");
+						$("#descrizioneProdotto11").removeAttr("disabled");
+						$("#scontoProdotto11").removeAttr("disabled");
+						$("#aggiungi11").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi11").click(function(e){
+				if($("#importoProdotto11").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto11").attr("disabled","true");
+						$("#descrizioneProdotto11").attr("disabled","true");
+						$("#scontoProdotto11").attr("disabled","true");
+						$("#aggiungi11").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto11").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto12").removeAttr("disabled");
+						$("#descrizioneProdotto12").removeAttr("disabled");
+						$("#scontoProdotto12").removeAttr("disabled");
+						$("#aggiungi12").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi12").click(function(e){
+				if($("#importoProdotto12").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto12").attr("disabled","true");
+						$("#descrizioneProdotto12").attr("disabled","true");
+						$("#scontoProdotto12").attr("disabled","true");
+						$("#aggiungi12").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto12").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto13").removeAttr("disabled");
+						$("#descrizioneProdotto13").removeAttr("disabled");
+						$("#scontoProdotto13").removeAttr("disabled");
+						$("#aggiungi13").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi13").click(function(e){
+				if($("#importoProdotto13").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto13").attr("disabled","true");
+						$("#descrizioneProdotto13").attr("disabled","true");
+						$("#scontoProdotto13").attr("disabled","true");
+						$("#aggiungi13").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto13").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto14").removeAttr("disabled");
+						$("#descrizioneProdotto14").removeAttr("disabled");
+						$("#scontoProdotto14").removeAttr("disabled");
+						$("#aggiungi14").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi14").click(function(e){
+				if($("#importoProdotto14").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto14").attr("disabled","true");
+						$("#descrizioneProdotto14").attr("disabled","true");
+						$("#scontoProdotto14").attr("disabled","true");
+						$("#aggiungi14").attr("disabled","true");
+						
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto14").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+						
+						$("#quantitaProdotto15").removeAttr("disabled");
+						$("#descrizioneProdotto15").removeAttr("disabled");
+						$("#scontoProdotto15").removeAttr("disabled");
+						$("#aggiungi15").removeAttr("disabled");
+					}
+				}
+			});
+			
+			$("#aggiungi15").click(function(e){
+				if($("#importoProdotto15").val() !== ""){
+					if(confirm("Vuoi aggiungere questo importo?")){
+						$("#quantitaProdotto15").attr("disabled","true");
+						$("#descrizioneProdotto15").attr("disabled","true");
+						$("#scontoProdotto15").attr("disabled","true");
+						$("#aggiungi15").attr("disabled","true");
+					
+						var totale = parseFloat($("#imponibile").val()) + parseFloat($("#importoProdotto15").val());
+						$("#imponibile").val(Math.round(totale*100)/100);
+						$("#totale").val(Math.round(totale*100)/100);
+					}
+				}
+			});
+				
+			$("#piva").keyup(function(){
+				$("#piva").parent().parent().removeClass("has-error");
+			});
+			
+			$("#buttonPIva").click(function(e){
+				$("#riferimenti").val("");
+				$("#indirizzo").val("");
+				$("#cPiva").val("");						
+				$("#codicefiscale").val("");
+				
+				var piva = $("#piva").val();
+				var Client = Parse.Object.extend("cliente"); 
+				var query = new Parse.Query(Client);  
+				
+				query.equalTo("piva", piva);
+				query.find({
+					success: function(results) {
+						if(results.length > 0){
+							$("#riferimenti").val(results[0].get("cognome")+" "+results[0].get("nome"));
+							$("#indirizzo").val(results[0].get("indirizzo"));
+							$("#cPiva").val(piva);						
+							$("#codicefiscale").val(results[0].get("codice_fiscale"));
+						}else{
+							$("#piva").parent().parent().attr("class","form-group has-error");
+						}
+					},
+					error: function(error) {
+						console.error("Error: " + error.code + " " + error.message);
+					}
+				});
+			});
+			
+			var Product = Parse.Object.extend("prodotto");
+			var query = new Parse.Query(Product);
+			query.find({
+			  success: function(obj) {
+				var str = "<option value='0'>---Select---</option>";
+				for (var i=0;i<obj.length;i++){	
+					var tmp = obj[i];
+					str = str + "<option value='"+tmp.id+"'>"+tmp.get("nome")+"</option>";	
+				}
+				$("#descrizioneProdotto1").append(str);
+				$("#descrizioneProdotto2").append(str);
+				$("#descrizioneProdotto3").append(str);
+				$("#descrizioneProdotto4").append(str);
+				$("#descrizioneProdotto5").append(str);
+				$("#descrizioneProdotto6").append(str);
+				$("#descrizioneProdotto7").append(str);
+				$("#descrizioneProdotto8").append(str);
+				$("#descrizioneProdotto9").append(str);
+				$("#descrizioneProdotto10").append(str);
+				$("#descrizioneProdotto11").append(str);
+				$("#descrizioneProdotto12").append(str);
+				$("#descrizioneProdotto13").append(str);
+				$("#descrizioneProdotto14").append(str);
+				$("#descrizioneProdotto15").append(str);
+			  },
+			  error: function(object, error) {
+				alert(error);
+			  }
+			});
+			
+			for(var i = 0; i <= 100; i++){
+				if(i == 0){
+					$("#scontoProdotto1").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto2").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto3").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto4").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto5").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto6").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto7").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto8").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto9").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto10").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto11").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto12").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto13").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto14").append("<option value='"+i+"'> </option>");
+					$("#scontoProdotto15").append("<option value='"+i+"'> </option>");
+					$("#iva").append("<option value='"+i+"'> </option>");
+				}else{
+					$("#scontoProdotto1").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto2").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto3").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto4").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto5").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto6").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto7").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto8").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto9").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto10").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto11").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto12").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto13").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto14").append("<option value='"+i+"'>"+i+"</option>");
+					$("#scontoProdotto15").append("<option value='"+i+"'>"+i+"</option>");
+					$("#iva").append("<option value='"+i+"'>"+i+"</option>");
+				}
+			}
+			
+			$("#descrizioneProdotto1").change(function(e){
+				var value = $("#descrizioneProdotto1").val();
+					
+				$("#quantitaProdotto1").empty();
+				$("#articoloProdotto1").val("");
+				$("#importoProdotto1").val("");	
+				$("#prezzoProdotto1").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto1").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto1").append(str);
+					$("#prezzoProdotto1").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto2").change(function(e){
+				var value = $("#descrizioneProdotto2").val();
+					
+				$("#quantitaProdotto2").empty();
+				$("#articoloProdotto2").val("");
+				$("#importoProdotto2").val("");	
+				$("#prezzoProdotto2").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto2").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto2").append(str);
+					$("#prezzoProdotto2").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto3").change(function(e){
+				var value = $("#descrizioneProdotto3").val();
+					
+				$("#quantitaProdotto3").empty();
+				$("#articoloProdotto3").val("");
+				$("#importoProdotto3").val("");	
+				$("#prezzoProdotto3").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto3").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto3").append(str);
+					$("#prezzoProdotto3").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto4").change(function(e){
+				var value = $("#descrizioneProdotto4").val();
+					
+				$("#quantitaProdotto4").empty();
+				$("#articoloProdotto4").val("");
+				$("#importoProdotto4").val("");	
+				$("#prezzoProdotto4").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto4").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto4").append(str);
+					$("#prezzoProdotto4").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto5").change(function(e){
+				var value = $("#descrizioneProdotto5").val();
+					
+				$("#quantitaProdotto5").empty();
+				$("#articoloProdotto5").val("");
+				$("#importoProdotto5").val("");	
+				$("#prezzoProdotto5").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto5").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto5").append(str);
+					$("#prezzoProdotto5").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto6").change(function(e){
+				var value = $("#descrizioneProdotto6").val();
+					
+				$("#quantitaProdotto6").empty();
+				$("#articoloProdotto6").val("");
+				$("#importoProdotto6").val("");	
+				$("#prezzoProdotto6").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto1").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto6").append(str);
+					$("#prezzoProdotto6").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto7").change(function(e){
+				var value = $("#descrizioneProdotto7").val();
+					
+				$("#quantitaProdotto7").empty();
+				$("#articoloProdotto7").val("");
+				$("#importoProdotto7").val("");	
+				$("#prezzoProdotto7").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto7").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto7").append(str);
+					$("#prezzoProdotto7").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto8").change(function(e){
+				var value = $("#descrizioneProdotto8").val();
+					
+				$("#quantitaProdotto8").empty();
+				$("#articoloProdotto8").val("");
+				$("#importoProdotto8").val("");	
+				$("#prezzoProdotto8").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto8").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto8").append(str);
+					$("#prezzoProdotto8").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto9").change(function(e){
+				var value = $("#descrizioneProdotto9").val();
+					
+				$("#quantitaProdotto9").empty();
+				$("#articoloProdotto9").val("");
+				$("#importoProdotto9").val("");	
+				$("#prezzoProdotto9").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto9").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto9").append(str);
+					$("#prezzoProdotto9").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto10").change(function(e){
+				var value = $("#descrizioneProdotto10").val();
+					
+				$("#quantitaProdotto10").empty();
+				$("#articoloProdotto10").val("");
+				$("#importoProdotto10").val("");	
+				$("#prezzoProdotto10").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto10").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto10").append(str);
+					$("#prezzoProdotto10").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto11").change(function(e){
+				var value = $("#descrizioneProdotto11").val();
+					
+				$("#quantitaProdotto11").empty();
+				$("#articoloProdotto11").val("");
+				$("#importoProdotto11").val("");	
+				$("#prezzoProdotto11").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto11").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto11").append(str);
+					$("#prezzoProdotto11").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto12").change(function(e){
+				var value = $("#descrizioneProdotto12").val();
+					
+				$("#quantitaProdotto12").empty();
+				$("#articoloProdotto12").val("");
+				$("#importoProdotto12").val("");	
+				$("#prezzoProdotto12").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto12").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto12").append(str);
+					$("#prezzoProdotto12").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto13").change(function(e){
+				var value = $("#descrizioneProdotto13").val();
+					
+				$("#quantitaProdotto13").empty();
+				$("#articoloProdotto13").val("");
+				$("#importoProdotto13").val("");	
+				$("#prezzoProdotto13").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto13").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto13").append(str);
+					$("#prezzoProdotto13").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto14").change(function(e){
+				var value = $("#descrizioneProdotto14").val();
+					
+				$("#quantitaProdotto14").empty();
+				$("#articoloProdotto14").val("");
+				$("#importoProdotto14").val("");	
+				$("#prezzoProdotto14").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto14").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto14").append(str);
+					$("#prezzoProdotto14").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#descrizioneProdotto15").change(function(e){
+				var value = $("#descrizioneProdotto15").val();
+					
+				$("#quantitaProdotto15").empty();
+				$("#articoloProdotto15").val("");
+				$("#importoProdotto15").val("");	
+				$("#prezzoProdotto15").val("");
+				var yourClass = Parse.Object.extend("prodotto");
+				var query = new Parse.Query(yourClass);
+				query.get(value, {
+				  success: function(yourObj) {
+					$("#articoloProdotto15").val(value);
+					var length = parseInt(yourObj.get("quantita"));
+					var str = "<option value='"+0+"'>---Select---</option>";
+					for(var i = 1; i <= length; i++){
+						str = str + "<option value='"+i+"'>"+i+"</option>";
+					}
+					$("#quantitaProdotto15").append(str);
+					$("#prezzoProdotto15").val(yourObj.get("prezzo"));
+				  },
+				  error: function(object, error) {
+					alert("Ci sono alcuni problemi col server");
+				  }
+				});
+			
+			});
+			
+			$("#scontoProdotto1").change(function(e){
+				if($("#scontoProdotto1").val() === "0"){
+					if($("#quantitaProdotto1").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto1").val()) * parseFloat($("#prezzoProdotto1").val()));
+						$("#importoProdotto1").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto1").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto1").val()) * parseFloat($("#prezzoProdotto1").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto1").val()))/100;
+						$("#importoProdotto1").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto2").change(function(e){
+				if($("#scontoProdotto2").val() === "0"){
+					if($("#quantitaProdotto2").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto2").val()) * parseFloat($("#prezzoProdotto2").val()));
+						$("#importoProdotto2").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto2").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto2").val()) * parseFloat($("#prezzoProdotto2").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto2").val()))/100;
+						$("#importoProdotto2").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto3").change(function(e){
+				if($("#scontoProdotto3").val() === "0"){
+					if($("#quantitaProdotto3").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto3").val()) * parseFloat($("#prezzoProdotto3").val()));
+						$("#importoProdotto3").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto3").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto3").val()) * parseFloat($("#prezzoProdotto3").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto3").val()))/100;
+						$("#importoProdotto3").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto4").change(function(e){
+				if($("#scontoProdotto4").val() === "0"){
+					if($("#quantitaProdotto4").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto4").val()) * parseFloat($("#prezzoProdotto4").val()));
+						$("#importoProdotto4").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto4").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto4").val()) * parseFloat($("#prezzoProdotto4").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto4").val()))/100;
+						$("#importoProdotto4").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto5").change(function(e){
+				if($("#scontoProdotto5").val() === "0"){
+					if($("#quantitaProdotto5").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto5").val()) * parseFloat($("#prezzoProdotto5").val()));
+						$("#importoProdotto5").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto5").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto5").val()) * parseFloat($("#prezzoProdotto5").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto5").val()))/100;
+						$("#importoProdotto5").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto6").change(function(e){
+				if($("#scontoProdotto6").val() === "0"){
+					if($("#quantitaProdotto6").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto6").val()) * parseFloat($("#prezzoProdotto6").val()));
+						$("#importoProdotto6").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto6").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto6").val()) * parseFloat($("#prezzoProdotto6").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto6").val()))/100;
+						$("#importoProdotto6").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto7").change(function(e){
+				if($("#scontoProdotto7").val() === "0"){
+					if($("#quantitaProdotto7").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto7").val()) * parseFloat($("#prezzoProdotto7").val()));
+						$("#importoProdotto7").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto7").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto7").val()) * parseFloat($("#prezzoProdotto7").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto7").val()))/100;
+						$("#importoProdotto7").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto8").change(function(e){
+				if($("#scontoProdotto8").val() === "0"){
+					if($("#quantitaProdotto8").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto8").val()) * parseFloat($("#prezzoProdotto8").val()));
+						$("#importoProdotto8").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto8").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto8").val()) * parseFloat($("#prezzoProdotto8").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto8").val()))/100;
+						$("#importoProdotto8").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto9").change(function(e){
+				if($("#scontoProdotto9").val() === "0"){
+					if($("#quantitaProdotto9").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto9").val()) * parseFloat($("#prezzoProdotto9").val()));
+						$("#importoProdotto9").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto9").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto9").val()) * parseFloat($("#prezzoProdotto9").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto9").val()))/100;
+						$("#importoProdotto9").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto10").change(function(e){
+				if($("#scontoProdotto10").val() === "0"){
+					if($("#quantitaProdotto10").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto10").val()) * parseFloat($("#prezzoProdotto10").val()));
+						$("#importoProdotto10").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto10").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto10").val()) * parseFloat($("#prezzoProdotto10").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto10").val()))/100;
+						$("#importoProdotto10").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto11").change(function(e){
+				if($("#scontoProdotto11").val() === "0"){
+					if($("#quantitaProdotto11").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto11").val()) * parseFloat($("#prezzoProdotto11").val()));
+						$("#importoProdotto11").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto11").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto11").val()) * parseFloat($("#prezzoProdotto11").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto11").val()))/100;
+						$("#importoProdotto11").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto12").change(function(e){
+				if($("#scontoProdotto12").val() === "0"){
+					if($("#quantitaProdotto12").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto12").val()) * parseFloat($("#prezzoProdotto12").val()));
+						$("#importoProdotto12").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto12").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto12").val()) * parseFloat($("#prezzoProdotto12").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto12").val()))/100;
+						$("#importoProdotto12").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto13").change(function(e){
+				if($("#scontoProdotto13").val() === "0"){
+					if($("#quantitaProdotto13").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto13").val()) * parseFloat($("#prezzoProdotto13").val()));
+						$("#importoProdotto13").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto13").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto13").val()) * parseFloat($("#prezzoProdotto13").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto13").val()))/100;
+						$("#importoProdotto13").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto14").change(function(e){
+				if($("#scontoProdotto14").val() === "0"){
+					if($("#quantitaProdotto14").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto14").val()) * parseFloat($("#prezzoProdotto14").val()));
+						$("#importoProdotto14").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto14").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto14").val()) * parseFloat($("#prezzoProdotto14").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto14").val()))/100;
+						$("#importoProdotto14").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#scontoProdotto15").change(function(e){
+				if($("#scontoProdotto15").val() === "0"){
+					if($("#quantitaProdotto15").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto15").val()) * parseFloat($("#prezzoProdotto15").val()));
+						$("#importoProdotto15").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto15").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto15").val()) * parseFloat($("#prezzoProdotto15").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto15").val()))/100;
+						$("#importoProdotto15").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto1").change(function(e){
+				if($("#scontoProdotto1").val() === "0"){
+					if($("#quantitaProdotto1").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto1").val()) * parseFloat($("#prezzoProdotto1").val()));
+						$("#importoProdotto1").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto1").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto1").val()) * parseFloat($("#prezzoProdotto1").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto1").val()))/100;
+						$("#importoProdotto1").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto2").change(function(e){
+				if($("#scontoProdotto2").val() === "0"){
+					if($("#quantitaProdotto2").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto2").val()) * parseFloat($("#prezzoProdotto2").val()));
+						$("#importoProdotto2").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto2").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto2").val()) * parseFloat($("#prezzoProdotto2").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto2").val()))/100;
+						$("#importoProdotto2").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto3").change(function(e){
+				if($("#scontoProdotto3").val() === "0"){
+					if($("#quantitaProdotto3").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto3").val()) * parseFloat($("#prezzoProdotto3").val()));
+						$("#importoProdotto3").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto3").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto3").val()) * parseFloat($("#prezzoProdotto3").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto3").val()))/100;
+						$("#importoProdotto3").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto4").change(function(e){
+				if($("#scontoProdotto4").val() === "0"){
+					if($("#quantitaProdotto4").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto4").val()) * parseFloat($("#prezzoProdotto4").val()));
+						$("#importoProdotto4").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto4").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto4").val()) * parseFloat($("#prezzoProdotto4").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto4").val()))/100;
+						$("#importoProdotto4").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto5").change(function(e){
+				if($("#scontoProdotto5").val() === "0"){
+					if($("#quantitaProdotto5").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto5").val()) * parseFloat($("#prezzoProdotto5").val()));
+						$("#importoProdotto5").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto5").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto5").val()) * parseFloat($("#prezzoProdotto5").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto5").val()))/100;
+						$("#importoProdotto5").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto6").change(function(e){
+				if($("#scontoProdotto6").val() === "0"){
+					if($("#quantitaProdotto6").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto6").val()) * parseFloat($("#prezzoProdotto6").val()));
+						$("#importoProdotto6").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto6").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto6").val()) * parseFloat($("#prezzoProdotto6").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto6").val()))/100;
+						$("#importoProdotto6").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto7").change(function(e){
+				if($("#scontoProdotto7").val() === "0"){
+					if($("#quantitaProdotto7").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto7").val()) * parseFloat($("#prezzoProdotto7").val()));
+						$("#importoProdotto7").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto7").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto7").val()) * parseFloat($("#prezzoProdotto7").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto7").val()))/100;
+						$("#importoProdotto7").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto8").change(function(e){
+				if($("#scontoProdotto8").val() === "0"){
+					if($("#quantitaProdotto8").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto8").val()) * parseFloat($("#prezzoProdotto8").val()));
+						$("#importoProdotto8").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto8").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto8").val()) * parseFloat($("#prezzoProdotto8").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto8").val()))/100;
+						$("#importoProdotto8").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto9").change(function(e){
+				if($("#scontoProdotto9").val() === "0"){
+					if($("#quantitaProdotto9").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto9").val()) * parseFloat($("#prezzoProdotto9").val()));
+						$("#importoProdotto9").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto9").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto9").val()) * parseFloat($("#prezzoProdotto9").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto9").val()))/100;
+						$("#importoProdotto9").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto10").change(function(e){
+				if($("#scontoProdotto10").val() === "0"){
+					if($("#quantitaProdotto10").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto10").val()) * parseFloat($("#prezzoProdotto10").val()));
+						$("#importoProdotto10").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto10").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto10").val()) * parseFloat($("#prezzoProdotto10").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto10").val()))/100;
+						$("#importoProdotto10").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto11").change(function(e){
+				if($("#scontoProdotto11").val() === "0"){
+					if($("#quantitaProdotto11").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto11").val()) * parseFloat($("#prezzoProdotto11").val()));
+						$("#importoProdotto11").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto11").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto11").val()) * parseFloat($("#prezzoProdotto11").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto11").val()))/100;
+						$("#importoProdotto11").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto12").change(function(e){
+				if($("#scontoProdotto12").val() === "0"){
+					if($("#quantitaProdotto12").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto12").val()) * parseFloat($("#prezzoProdotto12").val()));
+						$("#importoProdotto12").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto12").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto12").val()) * parseFloat($("#prezzoProdotto12").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto12").val()))/100;
+						$("#importoProdotto12").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto13").change(function(e){
+				if($("#scontoProdotto13").val() === "0"){
+					if($("#quantitaProdotto13").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto13").val()) * parseFloat($("#prezzoProdotto13").val()));
+						$("#importoProdotto13").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto13").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto13").val()) * parseFloat($("#prezzoProdotto13").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto13").val()))/100;
+						$("#importoProdotto13").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto14").change(function(e){
+				if($("#scontoProdotto14").val() === "0"){
+					if($("#quantitaProdotto14").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto14").val()) * parseFloat($("#prezzoProdotto14").val()));
+						$("#importoProdotto14").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto14").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto14").val()) * parseFloat($("#prezzoProdotto14").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto14").val()))/100;
+						$("#importoProdotto14").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
+			
+			$("#quantitaProdotto15").change(function(e){
+				if($("#scontoProdotto15").val() === "0"){
+					if($("#quantitaProdotto15").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto15").val()) * parseFloat($("#prezzoProdotto15").val()));
+						$("#importoProdotto15").val(Math.round(prezzo*100)/100);
+					}
+				}else{
+					if($("#quantitaProdotto15").val() !== null){
+						var prezzo = (parseInt($("#quantitaProdotto15").val()) * parseFloat($("#prezzoProdotto15").val()));
+						var sconto = (prezzo * parseInt($("#scontoProdotto15").val()))/100;
+						$("#importoProdotto15").val(Math.round((prezzo - sconto)*100)/100);
+					}
+				}
+			});
 			
 			var d = new Date();
 			var str = "";
