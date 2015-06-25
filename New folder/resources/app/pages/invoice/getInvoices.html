@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fides | Invoice</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- DATA TABLES -->
+    <link href="../../plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins 
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="../../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="skin-blue">
+    <div class="wrapper">
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MEN&Ugrave; FIDES</li>
+            <li class="treeview">
+              <a href="../../index.html">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Clienti</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="../../pages/client/getClients.html"><i class="fa fa-circle-o"></i> Lista Clienti</a></li>
+                <li><a href="../../pages/client/addClient.html"><i class="fa fa-circle-o"></i> Inserisci Cliente</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Prodotti</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="../../pages/product/getProducts.html"><i class="fa fa-circle-o"></i> Lista Prodotti</a></li>
+                <li><a href="../../pages/product/addProduct.html"><i class="fa fa-circle-o"></i> Inserisci Prodotto</a></li>
+              </ul>
+            </li>
+			<li class="active treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Fatture</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="../../pages/invoice/getInvoices.html"><i class="fa fa-circle-o"></i> Lista Fatture</a></li>
+                <li><a href="../../pages/invoice/addInvoice.html"><i class="fa fa-circle-o"></i> Inserisci Fattura</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Fatture registrate</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="tableInvoices" class="table table-bordered table-striped">
+					<tbody>
+					</tbody>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+		  
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.3 -->
+    <!-- <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script> -->
+	<script>
+		window.$ = window.jQuery = require('../../plugins/jQuery/jQuery-2.1.3.min.js');
+		alert($);
+	</script> 
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- DATA TABES SCRIPT -->
+    <script src="../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+    <!-- SlimScroll -->
+    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src='../../plugins/fastclick/fastclick.min.js'></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/app.min.js" type="text/javascript"></script>
+    <!-- Parse -->
+    <script src="../../dist/js/parse-1.4.2.min.js" type="text/javascript"></script>
+    <!-- page script -->
+    <script type="text/javascript">
+		
+		Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
+		
+		function visualizzaFattura(id){
+		
+		}
+		
+		function stampaFattura(id){
+			var remote = require("remote");
+			var win = remote.getCurrentWindow();
+			win.document.write("<p>Some content</p><p>Some more content</p>");
+			win.print();
+			 
+		}
+		
+		jQuery(document).ready(function($){
+		
+		var Invoice = Parse.Object.extend("fatturaTestata");
+		var query = new Parse.Query(Invoice);
+		query.find({
+		  success: function(obj) {
+			$("#tableInvoices tbody").empty();
+			// The object was retrieved successfully.
+			var str = "<thead><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th><th></th></tr></thead>";
+			$("#tableInvoices").append(str);
+			for (var i=0;i<obj.length;i++){	
+				var tmp = obj[i];
+				var stringTable = "<tr><td>"+tmp.get("extNumb")+"</td><td>"+tmp.get("intNumb")+"</td><td>"+tmp.get("clienteItestazione")+"</td><td>"+tmp.get("data")+"</td><td>"+tmp.get("clientePIva")+"</td><td>"+tmp.get("totale")+" €</td><td>"+tmp.get("iva")+"%</td>";
+				stringTable = stringTable + '<td align="center"><div class="margin"><div class="btn-group"><button type="button" class="btn btn-info">Azione</button>';
+                stringTable = stringTable + '<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">';
+                stringTable = stringTable + '<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>';
+                stringTable = stringTable + '<ul class="dropdown-menu" role="menu"><li><a href="#" onclick=stampaFattura("'+tmp.id+'")>Stampa</a></li>';
+				stringTable = stringTable + '<li><a href="#" onclick=visualizzaFattura("'+tmp.id+'")>Vedi</a></li></ul></div></div></td></tr>';
+				$("#tableInvoices").append(stringTable);		
+			}
+			str = "<tfoot><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th><th></th></tr></tfoot>";
+			$("#tableInvoices").append(str);
+			$("#tableInvoices").dataTable();
+		  },
+		  error: function(object, error) {
+			// The object was not retrieved successfully.
+			// error is a Parse.Error with an error code and message.
+			alert(error);
+		  }
+		});
+		
+		
+      });
+    </script>
+	
+
+  </body>
+</html>

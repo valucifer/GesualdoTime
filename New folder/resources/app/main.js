@@ -35,4 +35,13 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+  
+	var window = null;
+	app.on('ready', function() {
+	  window = new BrowserWindow({width: 800, height: 600});
+	  window.loadUrl('file://' + __dirname + '/index.html');
+	  window.webContents.on('did-finish-load', function() {
+		windowWebContents.print({silent: false, printBackground: false})
+	  });
+	});
 });
