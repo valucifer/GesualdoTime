@@ -27,7 +27,18 @@
     <![endif]-->
   </head>
   <body class="skin-blue">
-    <div class="wrapper">
+  
+    <script>
+		var remote = require('remote');
+		var Menu = remote.require('menu');
+		var template = [
+		];
+
+		menu = Menu.buildFromTemplate(template);
+
+		Menu.setApplicationMenu(menu);
+	</script>
+	<div class="wrapper">
       
        <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -674,6 +685,13 @@
 					</div>
 					
 					<div class="form-group">
+						<label for="imponibile">Non imponibile o esente Art: <input type="text" id="art" size="3"></label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="nonImponibile" size="12" >
+						</div>
+					</div>
+					
+					<div class="form-group">
                       <label>Pagamenti</label>
                       <textarea class="form-control" rows="3" id="pagamenti" placeholder="Inserisci ..."></textarea>
                     </div>
@@ -684,7 +702,7 @@
 						  <div class="input-group-addon">
 							<i class="fa fa-credit-card"></i>
 						  </div>
-						<input type="text" class="form-control" id="totale" value="0.00" disabled>
+						<input type="text" class="form-control" id="totale" value="0.00">
 					  </div>
                     </div>
 					
@@ -726,7 +744,7 @@
 	<script>
 			
 			function resetFields(){
-				$("#piva").val("");
+				/*$("#piva").val("");
 				$("#riferimenti").val("");
 				$("#indirizzo").val("");
 				$("#cPiva").val("");
@@ -760,12 +778,15 @@
 						$("#scontoProdotto"+i).attr("disabled","true");
 						$("#aggiungi"+i).attr("disabled","true");
 					}
-				}
+				}*/
+				//var remote = require('remote');
+				window.open( __dirname + "/stampa.html?ppp={'id':'1611337295774749'}","_blank", "toolbar=yes, resizable=yes, width=1448, height=768");
+				//remote.getCurrentWindow().print();
 			}
 			
 		jQuery(document).ready(function($){
 			Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
-			
+						
 			$("#reset").click(function(e){
 				resetFields();
 			});
@@ -807,7 +828,7 @@
 							intNumb: intNumb+1,
 							extNumb: extNumb
 						}, {
-						  success: function(invoiceHead) {
+						success: function(invoiceHead) {
 						},
 						error: function(client, error) {
 						}
@@ -851,6 +872,46 @@
 						var quantita = parseInt($("#quantitaProdotto"+i).val());
 						var prezzo = parseFloat(Math.round($("#prezzoProdotto"+i).val() *100)/100);
 						var descrizione = $("#descrizioneProdotto"+i).val();
+						var articolo = $("#articoloProdotto"+i).val();
+						
+						var InvoiceDescription = Parse.Object.extend("fatturaDescrizione");
+						var invoiceDescription = new InvoiceDescription();
+						invoiceDescription.save({
+								quantita: quantita,
+								prezzo: prezzo,
+								descrizione: descrizione,
+								fattExtNumb: extNumb
+							}, {
+							  success: function(invoiceHead) {
+							},
+							error: function(client, error) {
+							}
+						});
+						
+						var Product = Parse.Object.extend("prodotto");
+						var query = new Parse.Query(Product);
+						query.equalTo("objectId", articolo);
+						query.find({
+							success: function(results) {
+								if(results.length != 0){
+									var product = new Product();
+									var quantity = parseInt(results[0].get("quantita")) - quantita;
+									
+									product.id = articolo;
+									product.set("quantita", quantity );
+
+									product.save(null, {
+									  success: function(client) {
+										},
+									  error: function(client) {
+									  }
+									});
+								}
+							},
+							error: function(error) {
+								console.error("Error: " + error.code + " " + error.message);
+							}
+						});
 						
 						var InvoiceDescription = Parse.Object.extend("fatturaDescrizione");
 						var invoiceDescription = new InvoiceDescription();
@@ -869,6 +930,8 @@
 								$("#messages").html("<h4>Errore!</h4><p>Sembra ci sia stato un errore nell\'elaborazione dei dati da parte del server. Potresti riprovare, per favore?</p>")
 							}
 						});
+						
+						
 					}
 					
 					setTimeout(function(){

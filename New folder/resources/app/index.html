@@ -30,6 +30,16 @@
     <![endif]-->
   </head>
   <body class="skin-blue">
+   <script>
+		var remote = require('remote');
+		var Menu = remote.require('menu');
+		var template = [
+		];
+
+		menu = Menu.buildFromTemplate(template);
+
+		Menu.setApplicationMenu(menu);
+	</script>
     <div class="wrapper">
        <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
@@ -39,7 +49,7 @@
           <ul class="sidebar-menu">
             <li class="header">MEN&Ugrave; FIDES</li>
             <li class="active treeview">
-              <a href="#">
+              <a href="index.html">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
@@ -82,9 +92,7 @@
       </aside>
 
     </div><!-- ./wrapper -->
-
-	
-    <!-- jQuery 2.1.3 -->
+	<!-- jQuery 2.1.3 -->
     <!-- <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>-->
 	<script>
 		window.$ = window.jQuery = require('plugins/jQuery/jQuery-2.1.3.min.js');

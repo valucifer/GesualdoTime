@@ -26,6 +26,16 @@
     <![endif]-->
   </head>
   <body class="skin-blue">
+   <script>
+		var remote = require('remote');
+		var Menu = remote.require('menu');
+		var template = [
+		];
+
+		menu = Menu.buildFromTemplate(template);
+
+		Menu.setApplicationMenu(menu);
+	</script>
     <div class="wrapper">
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
