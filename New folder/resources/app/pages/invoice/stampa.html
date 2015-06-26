@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -31,7 +30,7 @@
   <textarea class="_textarea _textarea-1"></textarea>
   <p class="text text-9">S:</p>
   <div class="element element-4"></div>
-  <textarea id="condizioni" class="_textarea _textarea-2"></textarea>
+  <textarea id="condizioni" class="_textarea _textarea-2" style="text-align: justify;font-size: 11px;color:green;">CONDIZIONI GENERALI DI VENDITA - 1. La merce viaggia a rischio e pericolo del Cliente, anche se convenuta franco a destino. - 2. Salvo patto espresso, tutti i prezzi s'interpondono franco sede della ditta venditrice. - 3. Le parti concordano modalità e tempi per eventuali reclami. - 4. In caso di ritardo nel pagamento decorreranno gli interessi commerciali nella misura del saggio ufficiale di sconto aumentando di tre punti. - 5. Per qualsiasi controversia si adirà l'Autorita Giudiziaria competente del luogo che le parti hanno convenuto. - 6. Non si rilasciano quietanze separate: per il regolare saldo si prega di rimandare la fattura. Comunicateci eventuali errori/omissioni relativi ai Vs. dati anagrafici e fiscali. Senza Vs. comunicazioni resteranno validi quelli qui riportati e ci riterremo liberi da ogni responsabilita e sanzione. - 7. Fatto salvo quanto disposto dalla normativa vigente in materia ed in particolare dal D.Lgs. n. 206/2005 e dalla L. n. 40/2007.</textarea>
   <div class="element element-5"></div>
   <p class="text text-10">Quantità</p>
   <p class="text text-11">Articolo</p>
@@ -145,36 +144,61 @@
   <input id="totale" class="_input _input-102" type="text">
   <div class="element element-8"></div>
   
-<script>
-var remote = require('remote');
-var Menu = remote.require('menu');
-var template = [
-  {
-    label: 'Stampa',
-    submenu: [
-      {
-        label: 'Stampa Fattura',
-        accelerator: 'Command+R',
-        click: function() { remote.getCurrentWindow().print(); }
-      },
-    ]
-  }
-];
+	<script>
+	
+		var remote = require('remote');
+		var Menu = remote.require('menu');
+		var template = [
+		  {
+			label: 'Stampa',
+			submenu: [
+			  {
+				label: 'Stampa Fattura',
+				accelerator: 'Command+R',
+				click: function() { remote.getCurrentWindow().print(); }
+			  },{
+				label: 'Toggle DevTools',
+				accelerator: 'Alt+Command+I',
+				click: function() { remote.getCurrentWindow().toggleDevTools(); }
+			  },
+			]
+		  }
+		];
 
-menu = Menu.buildFromTemplate(template);
+		menu = Menu.buildFromTemplate(template);
 
-Menu.setApplicationMenu(menu);
-</script>
-  <script>
-		window.$ = window.jQuery = require('js/jquery-min.js');
+		Menu.setApplicationMenu(menu);
+	</script>
+    <script>
+		window.$ = window.jQuery = require('../../plugins/jQuery/jQuery-2.1.3.min.js');
 		alert($);
 	</script>
 	<script>
-		alert("ciao");
 		jQuery(document).ready(function($){
-				var remote = require('remote');
-				//window.open( __dirname + '/stampa.html?ppp={"id":"1611337295774749"}');
-				remote.getCurrentWindow().print();
+			var str = window.document.URL.toString();
+			var res = str.split("??");
+			var splitAnd = res[1].split("&");
+			
+			for(var i = 0; i < splitAnd.length; i++){
+				var afterSplit = splitAnd[i].split("=");
+				var idText = afterSplit[0];
+				var valueText = afterSplit[1];
+				
+				var percento = valueText.split("%20");
+				if(percento.length > 1){
+					var tmp = "";
+					for(var j = 0; j < percento.length; j++){
+						tmp = tmp + percento[j]+" ";
+					}
+					valueText = tmp;
+				}
+				if(valueText === "0" || valueText === "null" ){
+					valueText = "";
+				}
+				$("#"+idText).val(valueText);
+				
+			}
+			
 		});
 	</script>
 </body>
