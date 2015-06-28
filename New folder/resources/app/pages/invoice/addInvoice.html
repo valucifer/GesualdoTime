@@ -810,92 +810,54 @@
 				}
 				
 				if(flag){
-					var clientePiva = $("#piva").val();
-					var clienteItestazione = $("#riferimenti").val();
-					var clienteIndirizzo = $("#indirizzo").val();
-					var codiceFiscale = $("#codicefiscale").val();
-					var imponibile = parseFloat($("#imponibile").val());
-					var iva = parseInt($("#iva").val());
-					var totale = parseFloat($("#totale").val());
-					var data = $("#data").val();
-					var intNumb = parseInt($("#numIntFattura").val());
-					var extNumb = parseInt($("#numExtFattura").val());
-					
-					var InvoiceHead = Parse.Object.extend("fatturaTestata");
-					var invoiceHead = new InvoiceHead();
-					invoiceHead.save({
-							clientePIva: clientePiva,
-							clienteItestazione: clienteItestazione,
-							clienteIndirizzo: clienteIndirizzo,
-							imponibile: imponibile,
-							iva: iva,
-							totale: totale,
-							data: data,
-							intNumb: intNumb+1,
-							extNumb: extNumb
-						}, {
-						success: function(invoiceHead) {
-						},
-						error: function(client, error) {
-						}
-					});
-					
-					var Protocols = Parse.Object.extend("protocollo");
-					var query = new Parse.Query(Protocols);
-					query.equalTo("data", ""+d.getFullYear());
-					query.find({
-						success: function(results) {
-							if(results.length != 0){
-								var protocols = new Protocols();
-								var numero = parseInt(results[0].get("numero")) + 1;
-								
-								protocols.id = results[0].id;
-								protocols.set("data", ""+d.getFullYear());
-								protocols.set("numero", numero);
-
-								protocols.save(null, {
-								  success: function(protocols) {
-								  },
-								  error: function(protocols) {
-								  }
-								});
-							}
-						},
-						error: function(error) {
-							console.error("Error: " + error.code + " " + error.message);
-						}
-					});
-					
-					var count = 0;
-					for (var i = 1; i < 16; i++){
-						if($("#importoProdotto"+i).val() === "")
-							break;
-						else
-							count++;
-					}
-					
-					for(var i = 1; i <= count; i++){
-						var quantita = parseInt($("#quantitaProdotto"+i).val());
-						var prezzo = parseFloat(Math.round($("#prezzoProdotto"+i).val() *100)/100);
-						var descrizione = $("#descrizioneProdotto"+i).val();
-						var articolo = $("#articoloProdotto"+i).val();
+					if(confirm("Sei sicuro di voler salvare questa fattura? Premi 'OK' per effettuare il salvataggio dei dati.")){
+						var clientePiva = $("#piva").val();
+						var clienteItestazione = $("#riferimenti").val();
+						var clienteIndirizzo = $("#indirizzo").val();
+						var codiceFiscale = $("#codicefiscale").val();
+						var imponibile = parseFloat($("#imponibile").val());
+						var iva = parseInt($("#iva").val());
+						var totale = parseFloat($("#totale").val());
+						var data = $("#data").val();
+						var intNumb = parseInt($("#numIntFattura").val());
+						var extNumb = parseInt($("#numExtFattura").val());
 						
-						var Product = Parse.Object.extend("prodotto");
-						var query = new Parse.Query(Product);
-						query.equalTo("objectId", articolo);
+						var InvoiceHead = Parse.Object.extend("fatturaTestata");
+						var invoiceHead = new InvoiceHead();
+						invoiceHead.save({
+								clientePIva: clientePiva,
+								clienteItestazione: clienteItestazione,
+								clienteIndirizzo: clienteIndirizzo,
+								imponibile: imponibile,
+								iva: iva,
+								totale: totale,
+								data: data,
+								intNumb: intNumb+1,
+								extNumb: extNumb
+							}, {
+							success: function(invoiceHead) {
+							},
+							error: function(client, error) {
+							}
+						});
+						
+						var Protocols = Parse.Object.extend("protocollo");
+						var query = new Parse.Query(Protocols);
+						query.equalTo("data", ""+d.getFullYear());
 						query.find({
 							success: function(results) {
 								if(results.length != 0){
-									var product = new Product();
-									var quantity = parseInt(results[0].get("quantita")) - quantita;
+									var protocols = new Protocols();
+									var numero = parseInt(results[0].get("numero")) + 1;
 									
-									product.id = articolo;
-									product.set("quantita", quantity );
+									protocols.id = results[0].id;
+									protocols.set("data", ""+d.getFullYear());
+									protocols.set("numero", numero);
 
-									product.save(null, {
-									  success: function(client) {
-										},
-									  error: function(client) {
+									protocols.save(null, {
+									  success: function(protocols) {
+									  },
+									  error: function(protocols) {
 									  }
 									});
 								}
@@ -905,29 +867,69 @@
 							}
 						});
 						
-						var InvoiceDescription = Parse.Object.extend("fatturaDescrizione");
-						var invoiceDescription = new InvoiceDescription();
-						invoiceDescription.save({
-								quantita: quantita,
-								prezzo: prezzo,
-								descrizione: descrizione,
-								fattExtNumb: extNumb
-							}, {
-							  success: function(invoiceHead) {
-								$("#messages").attr("class","callout callout-success");
-								$("#messages").html("<h4>Successo!</h4><p>I dati sono stati inseriti correttamente sul server.</p>")
-							},
-							error: function(client, error) {
-								$("#messages").attr("class","callout callout-danger");
-								$("#messages").html("<h4>Errore!</h4><p>Sembra ci sia stato un errore nell\'elaborazione dei dati da parte del server. Potresti riprovare, per favore?</p>")
-							}
-						});
+						var count = 0;
+						for (var i = 1; i < 16; i++){
+							if($("#importoProdotto"+i).val() === "")
+								break;
+							else
+								count++;
+						}
 						
+						for(var i = 1; i <= count; i++){
+							var quantita = parseInt($("#quantitaProdotto"+i).val());
+							var prezzo = parseFloat(Math.round($("#prezzoProdotto"+i).val() *100)/100);
+							var descrizione = $("#descrizioneProdotto"+i).val();
+							var articolo = $("#articoloProdotto"+i).val();
+							
+							var Product = Parse.Object.extend("prodotto");
+							var query = new Parse.Query(Product);
+							query.equalTo("objectId", articolo);
+							query.find({
+								success: function(results) {
+									if(results.length != 0){
+										var product = new Product();
+										var quantity = parseInt(results[0].get("quantita")) - quantita;
+										
+										product.id = articolo;
+										product.set("quantita", quantity );
+
+										product.save(null, {
+										  success: function(client) {
+											},
+										  error: function(client) {
+										  }
+										});
+									}
+								},
+								error: function(error) {
+									console.error("Error: " + error.code + " " + error.message);
+								}
+							});
+							
+							var InvoiceDescription = Parse.Object.extend("fatturaDescrizione");
+							var invoiceDescription = new InvoiceDescription();
+							invoiceDescription.save({
+									quantita: quantita,
+									prezzo: prezzo,
+									descrizione: descrizione,
+									fattExtNumb: extNumb
+								}, {
+								  success: function(invoiceHead) {
+									$("#messages").attr("class","callout callout-success");
+									$("#messages").html("<h4>Successo!</h4><p>I dati sono stati inseriti correttamente sul server.</p>")
+								},
+								error: function(client, error) {
+									$("#messages").attr("class","callout callout-danger");
+									$("#messages").html("<h4>Errore!</h4><p>Sembra ci sia stato un errore nell\'elaborazione dei dati da parte del server. Potresti riprovare, per favore?</p>")
+								}
+							});
+							
+							
+						}
 						
+						$("#inseriscifattura").attr("disabled","true");
+						$("#stampa").removeAttr("disabled");	
 					}
-					
-					$("#inseriscifattura").attr("disabled","true");
-					$("#stampa").removeAttr("disabled");	
 				}			
 			
 			});
