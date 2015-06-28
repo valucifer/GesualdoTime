@@ -44,11 +44,6 @@
           <ul class="sidebar-menu">
             <li class="header">MEN&Ugrave; FIDES</li>
             <li class="treeview">
-              <a href="../../index.html">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-            </li>
-            <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
                 <span>Clienti</span>
@@ -133,19 +128,6 @@
 		
 		Parse.initialize("9Sxmi3NVV8hu4ANFXrukJ5Ub18Ehb8ec56ak2nha", "QrpzL5XpyI6kq5oniO1biQfoUX8p9Em1Hl0mnY5K");
 		
-		function visualizzaFattura(id){
-		
-		}
-
-		function print() {
-			var anotherwindow=window.open("addInvoice.html");
-			
-		}
-		
-		function stampaFattura(id){
-			print();
-		}
-		
 		jQuery(document).ready(function($){
 		
 		var Invoice = Parse.Object.extend("fatturaTestata");
@@ -154,19 +136,14 @@
 		  success: function(obj) {
 			$("#tableInvoices tbody").empty();
 			// The object was retrieved successfully.
-			var str = "<thead><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th><th></th></tr></thead>";
+			var str = "<thead><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th></tr></thead>";
 			$("#tableInvoices").append(str);
 			for (var i=0;i<obj.length;i++){	
 				var tmp = obj[i];
 				var stringTable = "<tr><td>"+tmp.get("extNumb")+"</td><td>"+tmp.get("intNumb")+"</td><td>"+tmp.get("clienteItestazione")+"</td><td>"+tmp.get("data")+"</td><td>"+tmp.get("clientePIva")+"</td><td>"+tmp.get("totale")+" €</td><td>"+tmp.get("iva")+"%</td>";
-				stringTable = stringTable + '<td align="center"><div class="margin"><div class="btn-group"><button type="button" class="btn btn-info">Azione</button>';
-                stringTable = stringTable + '<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">';
-                stringTable = stringTable + '<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>';
-                stringTable = stringTable + '<ul class="dropdown-menu" role="menu"><li><a href="#" onclick=stampaFattura("'+tmp.id+'")>Stampa</a></li>';
-				stringTable = stringTable + '<li><a href="#" onclick=visualizzaFattura("'+tmp.id+'")>Vedi</a></li></ul></div></div></td></tr>';
 				$("#tableInvoices").append(stringTable);		
 			}
-			str = "<tfoot><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th><th></th></tr></tfoot>";
+			str = "<tfoot><tr><th>N° Fattura</th><th>N° Fatt. Interna</th><th>Cliente</th><th>Data</th><th>P. Iva</th><th>Totale</th><th>Iva</th></tr></tfoot>";
 			$("#tableInvoices").append(str);
 			$("#tableInvoices").dataTable();
 		  },

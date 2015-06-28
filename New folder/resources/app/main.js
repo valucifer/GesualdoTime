@@ -18,9 +18,9 @@ app.on('ready', function() {
 	
 	  mainWindow = new BrowserWindow({center:true, title:"fides", width:size.width, height:size.height,javascript:false});
 		
-	  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+	  mainWindow.loadUrl('file://' + __dirname + '/pages/client/addClient.html');
 
-	  mainWindow.openDevTools();
+	  //mainWindow.openDevTools();
 
 	  mainWindow.on('closed', function() {
 		mainWindow = null;
