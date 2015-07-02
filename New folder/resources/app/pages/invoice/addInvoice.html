@@ -740,7 +740,7 @@
 	<script>
 		
 			function stampa(){
-				str = "riferimenti="+$("#riferimenti").val()+"&indirizzo="+$("#indirizzo").val()+"&cPiva="+$("#cPiva").val();
+				var str = "riferimenti="+$("#riferimenti").val()+"&indirizzo="+$("#indirizzo").val()+"&cPiva="+$("#cPiva").val();
 				str = str + "&codicefiscale="+$("#codicefiscale").val()+"&numExtFattura="+$("#numExtFattura").val()+"&data="+$("#data").val();
 				str = str + "&quantitaProdotto1="+$("#quantitaProdotto1").val()+"&articoloProdotto1="+$("#articoloProdotto1").val()+"&descrizioneProdotto1="+$("#descrizioneProdotto1 option:selected").text();
 				str = str + "&prezzoProdotto1="+$("#prezzoProdotto1").val()+"&scontoProdotto1="+$("#scontoProdotto1").val()+"&importoProdotto1="+$("#importoProdotto1").val();
@@ -821,6 +821,9 @@
 						var data = $("#data").val();
 						var intNumb = parseInt($("#numIntFattura").val());
 						var extNumb = parseInt($("#numExtFattura").val());
+						var art = $("#art").val();
+						var artDescr = $("#nonImponibile").val();
+						var pagamenti = $("#pagamenti").val();
 						
 						var InvoiceHead = Parse.Object.extend("fatturaTestata");
 						var invoiceHead = new InvoiceHead();
@@ -833,7 +836,11 @@
 								totale: totale,
 								data: data,
 								intNumb: intNumb+1,
-								extNumb: extNumb
+								extNumb: extNumb,
+								clienteCodiceFiscale: codiceFiscale,
+								art: art,
+								artDescr: artDescr,
+								pagamenti: pagamenti
 							}, {
 							success: function(invoiceHead) {
 							},
@@ -878,8 +885,10 @@
 						for(var i = 1; i <= count; i++){
 							var quantita = parseInt($("#quantitaProdotto"+i).val());
 							var prezzo = parseFloat(Math.round($("#prezzoProdotto"+i).val() *100)/100);
-							var descrizione = $("#descrizioneProdotto"+i).val();
+							var descrizione = $("#descrizioneProdotto"+i+" option:selected").text();
 							var articolo = $("#articoloProdotto"+i).val();
+							var sconto = $("#scontoProdotto"+i).val();
+							var importo = parseFloat($("#importoProdotto"+i).val());
 							
 							var Product = Parse.Object.extend("prodotto");
 							var query = new Parse.Query(Product);
@@ -912,7 +921,10 @@
 									quantita: quantita,
 									prezzo: prezzo,
 									descrizione: descrizione,
-									fattExtNumb: extNumb
+									fattExtNumb: extNumb,
+									sconto: sconto,
+									articolo: articolo,
+									importo: importo
 								}, {
 								  success: function(invoiceHead) {
 									$("#messages").attr("class","callout callout-success");
