@@ -116,7 +116,7 @@
                       <input type="text" hidden value="" id="hidden">
                     </div>
                     <div class="form-group">
-                      <label for="clientName">Nome: </label>
+                      <label for="clientName">Nome o Azienda: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
@@ -295,10 +295,6 @@
 				$("#clientName").parent().parent().attr("class","form-group has-error");
 				flag = false;
 			}
-			if($("#clientSurname").val() === "" ){
-				$("#clientSurname").parent().parent().attr("class","form-group has-error");
-				flag = false;
-			}
 			if($("#clientPIva").val() === "" ){
 				$("#clientPIva").parent().parent().attr("class","form-group has-error");
 				flag = false;
@@ -364,7 +360,7 @@
 		  success: function(obj) {
 			$("#tableClients tbody").empty();
 			// The object was retrieved successfully.
-			var str = "<thead><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></thead>";
+			var str = "<thead><tr><th>Nome o Azienda</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></thead>";
 			$("#tableClients").append(str);
 			for (var i=0;i<obj.length;i++){	
 				var tmp = obj[i];
@@ -376,7 +372,7 @@
 				stringTable = stringTable + '<li><a href="#" onclick=cancellaCliente("'+tmp.id+'")>Cancella</a></li></ul></div></div></td></tr>';
 				$("#tableClients").append(stringTable);		
 			}
-			str = "<tfoot><tr><th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></tfoot>";
+			str = "<tfoot><tr><th>Nome o Azienda</th><th>Cognome</th><th>Codice Fiscale</th><th>P. Iva</th><th>Indirizzo</th><th>Telefono</th><th>Cellulare</th><th></th></tr></tfoot>";
 			$("#tableClients").append(str);
 			$("#tableClients").dataTable();
 		  },

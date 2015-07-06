@@ -105,7 +105,7 @@
                 <form role="form">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="clientName">Nome: </label>
+                      <label for="clientName">Nome o Azienda: </label>
 					  <div class="input-group">
 						  <div class="input-group-addon">
 							<i class="fa fa-male"></i>
@@ -264,10 +264,6 @@
 				}
 				if($("#clientName").val() === "" ){
 					$("#clientName").parent().parent().attr("class","form-group has-error");
-					flag = false;
-				}
-				if($("#clientSurname").val() === "" ){
-					$("#clientSurname").parent().parent().attr("class","form-group has-error");
 					flag = false;
 				}
 				if($("#clientPIva").val() === "" ){

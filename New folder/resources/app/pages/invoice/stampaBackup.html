@@ -46,7 +46,7 @@
 			
 			var str = window.document.URL.toString();
 			var res = str.split("??");
-			var splitAnd = res[1].split("&");
+			var splitAnd = res[1].split("&&");
 			
 			for(var i = 0; i < splitAnd.length; i++){
 				var afterSplit = splitAnd[i].split("=");
@@ -65,7 +65,17 @@
 					}
 					valueText = tmp;
 				}
-						
+				
+				percento = valueText.split("%27");
+				if(percento.length > 1){
+					var tmp = "";
+					for(var j = 0; j < percento.length-1; j++){
+						tmp = tmp + percento[j]+"'";
+					}
+					tmp = tmp + percento[j];
+					valueText = tmp;
+				}
+										
 				if(idText === "art"){
 					if(valueText === ""){
 						valueText = " ";
